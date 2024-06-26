@@ -29,6 +29,13 @@ const Calculator = memo(function Calculator({ workouts, allowSound }) {
     [duration, allowSound]
   );
 
+  useEffect(
+    function () {
+      document.title = `Your ${number}-exercise workout`;
+    },
+    [number]
+  );
+
   function handleIncreaseDuration() {
     setDuration((curValue) => Math.floor(curValue + 1));
   }
